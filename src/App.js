@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "./pages/Home";
-import "./App.css";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 
@@ -10,6 +9,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import CartPage from "./pages/CartPage";
 
 
 const router = createBrowserRouter([
@@ -25,13 +25,15 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignupPage />,
   },
+  {
+    path: "/cart",
+    element: <CartPage />,
+  },
 ]);
 
 function App() {
   return (
-    <div>
       <RouterProvider router={router} />
-    </div>
   );
 }
 
