@@ -1,9 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchAllProducts, fetchProductsByFilter } from "./ProductApi";
+import {
+  fetchAllBrands,
+  fetchAllCategories,
+  fetchAllProducts,
+  fetchProductsByFilter,
+} from "./ProductApi";
 
 const initialState = {
   products: [],
   status: "idle",
+  totalItems: 0,
+  categories: [],
+  brands: [],
 };
 
 export const fetchAllProductsAsync = createAsyncThunk(
@@ -16,13 +24,28 @@ export const fetchAllProductsAsync = createAsyncThunk(
 
 export const fetchProductsByFilterAsync = createAsyncThunk(
   "product/fetchProductsByFilter",
-  async ({filter, sort}) => {
-    const response = await fetchProductsByFilter({filter, sort});
+  async ({ filter, sort, pagination }) => {
+    const response = await fetchProductsByFilter({ filter, sort, pagination });
+    console.log(response.data);
     return response.data;
   }
 );
 
+export const fetchAllCategoriesAsync = createAsyncThunk(
+  "product/fetchAllCategories",
+  async () => {
+    const response = await fetchAllCategories();
+    return response.data;
+  }
+);
 
+export const fetchAllBrandsAsync = createAsyncThunk(
+  "product/fetchAllBrands",
+  async () => {
+    const response = await fetchAllBrands();
+    return response.data;
+  }
+);
 
 export const productSlice = createSlice({
   name: "product",
@@ -48,6 +71,21 @@ export const productSlice = createSlice({
       .addCase(fetchProductsByFilterAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.products = action.payload;
+        state.totalItems = 100;
+      })
+      .addCase(fetchAllCategoriesAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchAllCategoriesAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.categories = action.payload;
+      })
+      .addCase(fetchAllBrandsAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchAllBrandsAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.brands = action.payload;
       });
   },
 });
@@ -55,5 +93,8 @@ export const productSlice = createSlice({
 export const { increment } = productSlice.actions;
 
 export const selectAllProducts = (state) => state.product.products;
+export const selectTotalItems = (state) => state.product.totalItems;
+export const selectAllCategories = (state) => state.product.categories;
+export const selectAllBrands = (state) => state.product.brands;
 
 export default productSlice.reducer;
