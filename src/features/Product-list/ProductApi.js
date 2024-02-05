@@ -57,3 +57,10 @@ export function fetchAllBrands() {
   });
 }
 
+export function fetchProductById(id) {
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:8000/products/"+id);
+    const data = await response.json();
+    resolve({ data });
+  });
+}

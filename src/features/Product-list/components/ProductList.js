@@ -24,8 +24,9 @@ import {
   ChevronRightIcon,
   StarIcon,
 } from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { ITEMS_PER_PAGE } from "../../../app/constants";
+import ProductDetail from "./ProductDetail";
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
@@ -95,7 +96,7 @@ export function ProductList() {
   useEffect(() => {
     dispatch(fetchAllCategoriesAsync());
     dispatch(fetchAllBrandsAsync());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="bg-white">
@@ -440,23 +441,21 @@ function Pagination({ page, setPage, handlePage, totalItems }) {
               <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
             </div>
             {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
-            {Array.from({ length: totalPages }).map(
-              (elem, index) => (
-                <div
-                  onClick={(e) => {
-                    handlePage(index+1);
-                  }}
-                  aria-current="page"
-                  className={`relative z-10 inline-flex items-center ${
-                    page === index + 1
-                      ? "bg-indigo-600 text-white"
-                      : "text-gray-400"
-                  }  px-4 py-2 hover:cursor-pointer text-sm font-semibold  focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
-                >
-                  {index + 1}
-                </div>
-              )
-            )}
+            {Array.from({ length: totalPages }).map((elem, index) => (
+              <div
+                onClick={(e) => {
+                  handlePage(index + 1);
+                }}
+                aria-current="page"
+                className={`relative z-10 inline-flex items-center ${
+                  page === index + 1
+                    ? "bg-indigo-600 text-white"
+                    : "text-gray-400"
+                }  px-4 py-2 hover:cursor-pointer text-sm font-semibold  focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+              >
+                {index + 1}
+              </div>
+            ))}
             <div
               onClick={(e) => handlePage(page < totalPages ? page + 1 : page)}
               className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
@@ -484,7 +483,7 @@ function ProductGrid({ products }) {
                     key={product.id}
                     className="group relative border-solid border-[2px] rounded-xl pb-2 px-1 pt-1"
                   >
-                    <Link to="/product-detail">
+                    <Link to={`/product-detail/${product.id}`} key={product.id} exact component={ProductDetail}>
                       <div className="h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
                         <img
                           src={product.thumbnail}
