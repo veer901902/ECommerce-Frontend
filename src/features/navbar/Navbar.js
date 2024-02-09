@@ -7,6 +7,8 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectItems } from "../cart/cartSlice";
 
 const user = {
   name: "Tom Cook",
@@ -29,6 +31,7 @@ function classNames(...classes) {
 }
 
 function Navbar({ children }) {
+  const items = useSelector(selectItems);
   return (
     <>
       <div className="min-h-full">
@@ -83,19 +86,23 @@ function Navbar({ children }) {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
-                        type="button"
-                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                      >
-                        <span className="absolute -inset-1.5" />
-                        <ShoppingCartIcon
-                          className="h-6 w-6 -mr-1"
-                          aria-hidden="true"
-                        />
-                      </button>
-                      <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs mb-5 font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                        3
-                      </span>
+                      <Link to="/cart">
+                        <button
+                          type="button"
+                          className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                          <span className="absolute -inset-1.5" />
+                          <ShoppingCartIcon
+                            className="h-6 w-6 -mr-1"
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </Link>
+                      {items.length > 0 && (
+                        <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs mb-5 font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                          {items.length}
+                        </span>
+                      )}
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -179,6 +186,20 @@ function Navbar({ children }) {
                       {item.name}
                     </Disclosure.Button>
                   ))}
+                  <Link
+                    to="/Cart"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white
+                              rounded-md px-3 py-2 text-sm font-medium"
+                  >
+                    Cart
+                  </Link>
+                  <Link
+                    to="/checkout"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white
+                              rounded-md px-3 py-2 text-sm font-medium"
+                  >
+                    Checkout
+                  </Link>
                 </div>
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
@@ -197,16 +218,18 @@ function Navbar({ children }) {
                         {user.email}
                       </div>
                     </div>
-                    <button
-                      type="button"
-                      className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    >
-                      <span className="absolute -inset-1.5" />
-                      <ShoppingCartIcon
-                        className="h-6 w-6 -mr-1"
-                        aria-hidden="true"
-                      />
-                    </button>
+                    <Link to="/cart">
+                      <button
+                        type="button"
+                        className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <span className="absolute -inset-1.5" />
+                        <ShoppingCartIcon
+                          className="h-6 w-6 -mr-1"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </Link>
                     <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mb-4 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
                       3
                     </span>
