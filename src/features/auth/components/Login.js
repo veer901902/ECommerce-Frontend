@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, incrementAsync, selectError, selectLoggedInUser } from "../authSlice";
+import {
+  increment,
+  incrementAsync,
+  selectError,
+  selectLoggedInUser,
+} from "../authSlice";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { checkUserAsync } from "../authSlice";
@@ -18,7 +23,7 @@ export function Login() {
 
   return (
     <>
-    {user && <Navigate to='/' replace={true}></Navigate>}
+      {user && <Navigate to="/" replace={true}></Navigate>}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -40,6 +45,8 @@ export function Login() {
               );
             })}
             className="space-y-6"
+            action="#"
+            method="POST"
           >
             <div>
               <label
@@ -87,8 +94,8 @@ export function Login() {
               <div className="mt-2">
                 <input
                   id="password"
-                  {...register('password', {
-                    required: 'password is required',
+                  {...register("password", {
+                    required: "password is required",
                   })}
                   type="password"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -97,9 +104,7 @@ export function Login() {
                   <p className="text-red-500">{errors.password.message}</p>
                 )}
               </div>
-              {error && (
-                  <p className="text-red-500">{error.message}</p>
-                )}
+              {error && <p className="text-red-500">{error.message}</p>}
             </div>
 
             <div>

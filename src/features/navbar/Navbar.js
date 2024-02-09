@@ -64,6 +64,20 @@ function Navbar({ children }) {
                             {item.name}
                           </a>
                         ))}
+                        <Link
+                          to="/Cart"
+                          className="text-gray-300 hover:bg-gray-700 hover:text-white
+                              rounded-md px-3 py-2 text-sm font-medium"
+                        >
+                          Cart
+                        </Link>
+                        <Link
+                          to="/checkout"
+                          className="text-gray-300 hover:bg-gray-700 hover:text-white
+                              rounded-md px-3 py-2 text-sm font-medium"
+                        >
+                          Checkout
+                        </Link>
                       </div>
                     </div>
                   </div>
