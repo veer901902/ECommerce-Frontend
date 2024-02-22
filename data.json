@@ -2441,20 +2441,29 @@
         {
           "name": "Veer B Singh",
           "email": "veer@gmail.com",
-          "phone": "123456789",
-          "street": "tb nagar",
-          "city": "mohali",
-          "state": "punjab",
-          "pinCode": "123"
-        },
-        {
-          "name": "Veer B Singh",
-          "email": "veer@gmail.com",
-          "phone": "123456789",
-          "street": "SAS Nagar",
           "city": "Chandigarh",
           "state": "punjab",
-          "pinCode": "556"
+          "pinCode": "678998",
+          "phone": "12312331232",
+          "street": "SAS Nagar"
+        },
+        {
+          "name": "Veer Bahadur Singh",
+          "email": "veer@gmail.com",
+          "city": "mohali",
+          "state": "pk",
+          "pinCode": "123",
+          "phone": "123456789",
+          "street": "kk nagar"
+        },
+        {
+          "name": "Prince Singh",
+          "email": "veer@gmail.com",
+          "phone": "4445556667",
+          "street": "Vikas Colony",
+          "city": "Patiala",
+          "state": "Uttar Pradesh",
+          "pinCode": "8889"
         }
       ]
     }

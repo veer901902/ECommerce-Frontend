@@ -13,6 +13,7 @@ import {
 } from "../features/auth/authSlice.js";
 import { createOrderAsync, selectCurrentOrder } from "../features/order/orderSlice.js";
 import { current } from "@reduxjs/toolkit";
+import { selectUserInfo } from "../features/user/userSlice.js";
 
 export default function Checkout() {
   const [open, setOpen] = useState(true);
@@ -26,7 +27,7 @@ export default function Checkout() {
     reset,
   } = useForm();
 
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
   const items = useSelector(selectItems);
   const currentOrder = useSelector(selectCurrentOrder);
 
