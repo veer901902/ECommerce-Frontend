@@ -15,16 +15,16 @@ export function fetchItemsByUserId(userId) {
   return new Promise(async (resolve) => {
     const response = await fetch("http://localhost:8000/cart?user=" + userId);
     const data = await response.json();
-    resolve({data});
+    resolve({ data });
   });
 }
 
 export function updateCart(update) {
   return new Promise(async (resolve) => {
-    const response = await fetch('http://localhost:8000/cart/'+update.id, {
-      method: 'PATCH',
+    const response = await fetch("http://localhost:8000/cart/" + update.id, {
+      method: "PATCH",
       body: JSON.stringify(update),
-      headers: { 'content-type': 'application/json' },
+      headers: { "content-type": "application/json" },
     });
     const data = await response.json();
     // TODO: on server it will only return some info of user (not password)
@@ -34,13 +34,25 @@ export function updateCart(update) {
 
 export function deleteItemFromCart(itemId) {
   return new Promise(async (resolve) => {
-    const response = await fetch('http://localhost:8000/cart/'+itemId, {
-      method: 'DELETE',
-      headers: { 'content-type': 'application/json' },
+    const response = await fetch("http://localhost:8000/cart/" + itemId, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
     });
     const data = await response.json();
     // TODO: on server it will only return some info of user (not password)
-    resolve({ data:{id:itemId} });
+    resolve({ data: { id: itemId } });
   });
 }
 
+export function resetCart(userId) {
+  return new Promise(async (resolve) => {
+    const response = await fetchItemsByUserId(userId);
+    const items = response.data;
+    console.log(items);
+
+    for (let item of items) {
+      await deleteItemFromCart(item.id);
+    }
+    resolve({status: 'success'});
+  });
+}

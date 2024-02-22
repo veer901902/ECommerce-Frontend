@@ -2461,21 +2461,22 @@
   ],
   "cart": [
     {
-      "id": "1b40",
-      "title": "MacBook Pro",
-      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
-      "price": 1749,
-      "discountPercentage": 11.02,
-      "rating": 4.57,
-      "stock": 83,
+      "id": "aa5a",
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 549,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
       "brand": "Apple",
-      "category": "laptops",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
+      "category": "smartphones",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
       "images": [
-        "https://cdn.dummyjson.com/product-images/6/1.png",
-        "https://cdn.dummyjson.com/product-images/6/2.jpg",
-        "https://cdn.dummyjson.com/product-images/6/3.png",
-        "https://cdn.dummyjson.com/product-images/6/4.jpg"
+        "https://cdn.dummyjson.com/product-images/1/1.jpg",
+        "https://cdn.dummyjson.com/product-images/1/2.jpg",
+        "https://cdn.dummyjson.com/product-images/1/3.jpg",
+        "https://cdn.dummyjson.com/product-images/1/4.jpg",
+        "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
       ],
       "quantity": 1,
       "user": "ef25"
@@ -2483,10 +2484,10 @@
   ],
   "orders": [
     {
-      "id": "e68f",
+      "id": "9398",
       "items": [
         {
-          "id": "1",
+          "id": "225b",
           "title": "iPhone 9",
           "description": "An apple mobile which is nothing like apple",
           "price": 549,
@@ -2503,11 +2504,11 @@
             "https://cdn.dummyjson.com/product-images/1/4.jpg",
             "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
           ],
-          "quantity": 3,
+          "quantity": 1,
           "user": "ef25"
         },
         {
-          "id": "2",
+          "id": "b3d7",
           "title": "iPhone X",
           "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
           "price": 899,
@@ -2527,8 +2528,8 @@
           "user": "ef25"
         }
       ],
-      "totalAmount": 2546,
-      "totalItems": 4,
+      "totalAmount": 1448,
+      "totalItems": 2,
       "user": {
         "id": "ef25",
         "email": "veer@gmail.com",
@@ -2555,7 +2556,631 @@
         ]
       },
       "paymentMethod": "cash",
-      "selectedAddress": null
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "518a",
+      "items": [
+        {
+          "id": "4122",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 549,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "d8ac",
+      "items": [
+        {
+          "id": "b8c6",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 549,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "307b",
+      "items": [
+        {
+          "id": "4280",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 549,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "SAS Nagar",
+        "city": "Chandigarh",
+        "state": "punjab",
+        "pinCode": "556"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "0d03",
+      "items": [
+        {
+          "id": "df4c",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 549,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "39af",
+      "items": [
+        {
+          "id": "c369",
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/2/1.jpg",
+            "https://cdn.dummyjson.com/product-images/2/2.jpg",
+            "https://cdn.dummyjson.com/product-images/2/3.jpg",
+            "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 899,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "66ce",
+      "items": [
+        {
+          "id": "bf36",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 549,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "SAS Nagar",
+        "city": "Chandigarh",
+        "state": "punjab",
+        "pinCode": "556"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "f464",
+      "items": [
+        {
+          "id": "bf36",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 549,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "fca0",
+      "items": [
+        {
+          "id": "bf36",
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/1/1.jpg",
+            "https://cdn.dummyjson.com/product-images/1/2.jpg",
+            "https://cdn.dummyjson.com/product-images/1/3.jpg",
+            "https://cdn.dummyjson.com/product-images/1/4.jpg",
+            "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        },
+        {
+          "id": "bdde",
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/2/1.jpg",
+            "https://cdn.dummyjson.com/product-images/2/2.jpg",
+            "https://cdn.dummyjson.com/product-images/2/3.jpg",
+            "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        },
+        {
+          "id": "376c",
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/2/1.jpg",
+            "https://cdn.dummyjson.com/product-images/2/2.jpg",
+            "https://cdn.dummyjson.com/product-images/2/3.jpg",
+            "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 2347,
+      "totalItems": 3,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "c3fe",
+      "items": [
+        {
+          "id": "ac84",
+          "title": "OPPOF19",
+          "description": "OPPO F19 is officially announced on April 2021.",
+          "price": 280,
+          "discountPercentage": 17.91,
+          "rating": 4.3,
+          "stock": 123,
+          "brand": "OPPO",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/4/1.jpg",
+            "https://cdn.dummyjson.com/product-images/4/2.jpg",
+            "https://cdn.dummyjson.com/product-images/4/3.jpg",
+            "https://cdn.dummyjson.com/product-images/4/4.jpg",
+            "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "ef25"
+        }
+      ],
+      "totalAmount": 280,
+      "totalItems": 1,
+      "user": {
+        "id": "ef25",
+        "email": "veer@gmail.com",
+        "password": "123@Veer",
+        "addresses": [
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "tb nagar",
+            "city": "mohali",
+            "state": "punjab",
+            "pinCode": "123"
+          },
+          {
+            "name": "Veer B Singh",
+            "email": "veer@gmail.com",
+            "phone": "123456789",
+            "street": "SAS Nagar",
+            "city": "Chandigarh",
+            "state": "punjab",
+            "pinCode": "556"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Veer B Singh",
+        "email": "veer@gmail.com",
+        "phone": "123456789",
+        "street": "tb nagar",
+        "city": "mohali",
+        "state": "punjab",
+        "pinCode": "123"
+      },
+      "status": "pending"
     }
   ]
 }
