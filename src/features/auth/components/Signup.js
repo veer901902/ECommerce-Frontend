@@ -7,8 +7,11 @@ import { useForm } from "react-hook-form";
 export function Signup() {
   const dispatch = useDispatch();
 
-  const {register, handleSubmit, formState: {errors}, } = useForm();
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <>
@@ -26,9 +29,21 @@ export function Signup() {
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form noValidate className="space-y-6" onSubmit={handleSubmit((data)=>{
-              dispatch(createUserAsync({email: data.email, password: data.password}))
-            })}>
+            <form
+              noValidate
+              className="space-y-6"
+              onSubmit={handleSubmit((data) => {
+                dispatch(
+                  createUserAsync({
+                    email: data.email,
+                    password: data.password,
+                    addresses: [],
+                    role: "user",
+                    // TODO: this role can be directly given on backend
+                  })
+                );
+              })}
+            >
               <div>
                 <label
                   htmlFor="email"
@@ -39,19 +54,19 @@ export function Signup() {
                 <div className="mt-2">
                   <input
                     id="email"
-                    {...register('email', {
-                      required: 'email is required',
+                    {...register("email", {
+                      required: "email is required",
                       pattern: {
                         value: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi,
-                        message: 'email not valid',
+                        message: "email not valid",
                       },
                     })}
                     type="email"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
-                   {errors.email && (
-                  <p className="text-red-500">{errors.email.message}</p>
-                )}
+                  {errors.email && (
+                    <p className="text-red-500">{errors.email.message}</p>
+                  )}
                 </div>
               </div>
 
@@ -68,8 +83,8 @@ export function Signup() {
                 <div className="mt-2">
                   <input
                     id="password"
-                    {...register('password', {
-                      required: 'password is required',
+                    {...register("password", {
+                      required: "password is required",
                       pattern: {
                         value:
                           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
@@ -82,8 +97,8 @@ export function Signup() {
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                   {errors.password && (
-                  <p className="text-red-500">{errors.password.message}</p>
-                )}
+                    <p className="text-red-500">{errors.password.message}</p>
+                  )}
                 </div>
               </div>
 
@@ -100,18 +115,20 @@ export function Signup() {
                 <div className="mt-2">
                   <input
                     id="confirm-password"
-                    {...register('confirmPassword', {
-                      required: 'confirm password is required',
+                    {...register("confirmPassword", {
+                      required: "confirm password is required",
                       validate: (value, formValues) =>
-                        value === formValues.password || 'password not matching',
+                        value === formValues.password ||
+                        "password not matching",
                     })}
                     type="password"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                   {errors.confirmPassword && (
-                  <p className="text-red-500">
-                    {errors.confirmPassword.message}
-                  </p>)}
+                    <p className="text-red-500">
+                      {errors.confirmPassword.message}
+                    </p>
+                  )}
                 </div>
               </div>
 

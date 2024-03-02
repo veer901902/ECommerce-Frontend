@@ -23,6 +23,10 @@ import { fetchLoggedInUserAsync } from "./features/user/userSlice";
 import UserProfilePage from "./pages/UserProfilePage";
 import Logout from "./features/auth/components/Logout";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import AdminHome from "./pages/AdminHome";
+import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
+import AdminProductDetailPage from "./pages/AdminProductDetailPage";
+import AdminProductFormPage from "./pages/AdminProductFormPage";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,14 @@ const router = createBrowserRouter([
       <Protected>
         <Home />
       </Protected>
+    ),
+  },
+  {
+    path: "/admin",
+    element: (
+      <ProtectedAdmin>
+        <AdminHome />
+      </ProtectedAdmin>
     ),
   },
   {
@@ -66,40 +78,52 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/order-success/:id",
+    path: "/admin/product-detail/:id",
     element: (
-      <OrderSuccessPage></OrderSuccessPage>
+      <ProtectedAdmin>
+        <AdminProductDetailPage></AdminProductDetailPage>
+      </ProtectedAdmin>
     ),
+  },
+  {
+    path: "/admin/product-form",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: "/admin/product-form/edit/:id",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: "/order-success/:id",
+    element: <OrderSuccessPage></OrderSuccessPage>,
   },
   {
     path: "/orders",
-    element: (
-      <UserOrdersPage></UserOrdersPage>
-    ),
+    element: <UserOrdersPage></UserOrdersPage>,
   },
   {
-    path: '/profile',
-    element: (
-       <UserProfilePage></UserProfilePage>
-    ),
+    path: "/profile",
+    element: <UserProfilePage></UserProfilePage>,
   },
   {
-    path: '/logout',
-    element: (
-       <Logout></Logout>
-    ),
+    path: "/logout",
+    element: <Logout></Logout>,
   },
   {
-    path: '/forgot-password',
-    element: (
-       <ForgotPasswordPage></ForgotPasswordPage>
-    ),
+    path: "/forgot-password",
+    element: <ForgotPasswordPage></ForgotPasswordPage>,
   },
   {
     path: "*",
-    element: (
-        <PageNotFound></PageNotFound>
-    ),
+    element: <PageNotFound></PageNotFound>,
   },
 ]);
 
@@ -107,12 +131,12 @@ function App() {
   const user = useSelector(selectLoggedInUser);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-    if(user){
+  useEffect(() => {
+    if (user) {
       dispatch(fetchItemsByUserIdAsync(user.id));
       dispatch(fetchLoggedInUserAsync(user.id));
     }
-  }, [dispatch, user])
+  }, [dispatch, user]);
 
   return <RouterProvider router={router} />;
 }
