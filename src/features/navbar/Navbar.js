@@ -15,6 +15,7 @@ const navigation = [
   { name: "Dashboard", link: "#", user: true },
   { name: "Team", link: "#", user: true },
   { name: "Admin", link: "/admin", admin: true },
+  { name: "Orders", link: "/admin/orders", admin: true },
 ];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
@@ -49,8 +50,8 @@ function Navbar({ children }) {
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                         {navigation.map((item) =>
-                          (item[user.role])? (
+                        {navigation.map((item) =>
+                          item[user.role] ? (
                             <Link
                               key={item.name}
                               to={item.link}

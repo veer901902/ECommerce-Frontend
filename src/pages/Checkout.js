@@ -14,6 +14,7 @@ import {
 import { createOrderAsync, selectCurrentOrder } from "../features/order/orderSlice.js";
 import { current } from "@reduxjs/toolkit";
 import { selectUserInfo } from "../features/user/userSlice.js";
+import { discountedPrice } from "../app/constants.js";
 
 export default function Checkout() {
   const [open, setOpen] = useState(true);
@@ -32,7 +33,7 @@ export default function Checkout() {
   const currentOrder = useSelector(selectCurrentOrder);
 
   const totalAmount = items.reduce((amount, item) => {
-    return (amount = item.quantity * item.price + amount);
+    return (amount = item.quantity * discountedPrice(item) + amount);
   }, 0);
 
   const totalItems = items.reduce(
@@ -389,7 +390,7 @@ export default function Checkout() {
                             <h3>
                               <a href={item.href}>{item.title}</a>
                             </h3>
-                            <p className="ml-4">${item.price}</p>
+                            <p className="ml-4">${discountedPrice(item)}</p>
                           </div>
                           <p className="mt-1 text-sm text-gray-500">
                             {item.brand}
