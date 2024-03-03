@@ -9,7 +9,7 @@ import {
 } from "../ProductSlice";
 import { useParams } from "react-router-dom";
 import { fetchProductById } from "../ProductApi";
-import { addToCartAsync } from "../../cart/cartSlice";
+import { addToCartAsync, selectItems } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
 import { discountedPrice } from "../../../app/constants";
 
@@ -44,15 +44,25 @@ export default function ProductDetail() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const user = useSelector(selectLoggedInUser);
+  const items = useSelector(selectItems);
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams(); //comes from react-router and gives us the parameter from the url
 
   function handleCart(e) {
     e.preventDefault();
-    const newItem  = {...product,quantity:1,user:user.id }
-    delete newItem['id'];
-    dispatch(addToCartAsync(newItem));
+    if (items.findIndex((item) => item.productId === product.id) >= 0) {
+      console.log("Already added");
+    } else {
+      const newItem = {
+        ...product,
+        productId: product.id,
+        quantity: 1,
+        user: user.id,
+      };
+      delete newItem["id"];
+      dispatch(addToCartAsync(newItem));
+    }
   }
 
   useEffect(() => {
