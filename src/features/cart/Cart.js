@@ -5,12 +5,17 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { deleteItemFromCartAsync, selectItems, updateCartAsync } from "./cartSlice";
+import {
+  deleteItemFromCartAsync,
+  selectItems,
+  updateCartAsync,
+} from "./cartSlice";
 import { discountedPrice } from "../../app/constants";
+import Modal from "../common/Modal";
 
 export function Cart() {
   const dispatch = useDispatch();
-  const [open, setOpen] = useState(true);
+  const [openModal, setOpenModal] = useState(null);
 
   const items = useSelector(selectItems);
   const totalAmount = items.reduce((amount, item) => {
@@ -22,14 +27,13 @@ export function Cart() {
     0
   );
 
-    function handleQuantity(e, item){
-       dispatch(updateCartAsync({...item, quantity: +e.target.value}));
-    };
+  function handleQuantity(e, item) {
+    dispatch(updateCartAsync({ ...item, quantity: +e.target.value }));
+  }
 
-    function handleRemove(e, id){
-      dispatch(deleteItemFromCartAsync(id));
-    }
-
+  function handleRemove(e, id) {
+    dispatch(deleteItemFromCartAsync(id));
+  }
 
   return (
     <div className="m-15">
@@ -60,7 +64,11 @@ export function Cart() {
                   <div className="flex flex-1 items-end justify-between text-sm">
                     <div className="flex grow">
                       <label className="text-gray-500 font-semibold">Qty</label>
-                      <select onChange={(e)=>handleQuantity(e, item)} value={item.quantity} className="ml-1 -mt-[10px]">
+                      <select
+                        onChange={(e) => handleQuantity(e, item)}
+                        value={item.quantity}
+                        className="ml-1 -mt-[10px]"
+                      >
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -70,8 +78,19 @@ export function Cart() {
                     </div>
 
                     <div className="flex">
+                      {openModal === item.id && <Modal
+                        title={`Delete ${item.title}`}
+                        message="Are you sure you want to delete this cart item"
+                        dangerOption="Delete"
+                        cancelOption="Cancel"
+                        dangerAction={(e)=>handleRemove(e, item.id)}
+                        cancelAction={()=>setOpenModal(null)}
+                        showModal={openModal === item.id}
+                      ></Modal>}
                       <button
-                        onClick={(e)=>{handleRemove(e, item.id)}}
+                        onClick={(e) => {
+                           setOpenModal(item.id)
+                        }}
                         type="button"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
@@ -100,7 +119,7 @@ export function Cart() {
         </p>
         <div className="mt-6">
           <Link
-            to = '/checkout'
+            to="/checkout"
             className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
           >
             Checkout
@@ -112,7 +131,6 @@ export function Cart() {
               <button
                 type="button"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
-                onClick={() => setOpen(false)}
               >
                 Continue Shopping
                 <span aria-hidden="true"> &rarr;</span>
