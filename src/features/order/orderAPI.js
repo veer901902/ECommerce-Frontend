@@ -13,10 +13,10 @@ export function createOrder(order) {
 
 export function updateOrder(order) {
   return new Promise(async (resolve) => {
-    const response = await fetch('http://localhost:8000/orders/'+order.id, {
-      method: 'PATCH',
+    const response = await fetch("http://localhost:8000/orders/" + order.id, {
+      method: "PATCH",
       body: JSON.stringify(order),
-      headers: { 'content-type': 'application/json' },
+      headers: { "content-type": "application/json" },
     });
     const data = await response.json();
     resolve({ data });
@@ -38,10 +38,9 @@ export function fetchAllOrders(sort, pagination) {
     const response = await fetch("http://localhost:8000/orders?" + queryString);
     const res = await response.json();
     // console.log(data);
-    
-    // this is not working
-    const totalOrders = res.items;
-    // console.log(totalOrders)
-    resolve({ data: { orders: res.data, totalOrders: +totalOrders } });
+
+    const data = await response.json();
+    const totalOrders = await response.headers.get("X-Total-Count");
+    resolve({ data: { orders: data, totalOrders: +totalOrders } });
   });
 }

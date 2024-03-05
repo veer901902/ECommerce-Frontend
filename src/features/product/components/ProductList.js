@@ -91,7 +91,7 @@ export function ProductList() {
   }
 
   useEffect(() => {
-    const pagination = { _page: page, _per_page: ITEMS_PER_PAGE };
+    const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
     dispatch(fetchProductsByFilterAsync({ filter, sort, pagination }));
     // TODO : Server will filter deleted products
   }, [dispatch, filter, sort, page]);
@@ -395,8 +395,6 @@ function DesktopFilter({ handleFilter, filters }) {
     </form>
   );
 }
-
-
 
 function ProductGrid({ products }) {
   return (

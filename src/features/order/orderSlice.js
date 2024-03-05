@@ -64,7 +64,7 @@ export const orderSlice = createSlice({
       .addCase(fetchAllOrdersAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.orders = action.payload.orders;
-        state.totalOrders = action.payload.totalOrders; // Todo: will take it from backend 
+        state.totalOrders = action.payload.totalOrders;
       })
       .addCase(updateOrderAsync.pending, (state) => {
         state.status = "loading";
