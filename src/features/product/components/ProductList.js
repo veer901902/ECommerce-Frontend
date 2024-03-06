@@ -3,9 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   fetchAllBrandsAsync,
   fetchAllCategoriesAsync,
-  fetchAllProductsAsync,
   fetchProductsByFilterAsync,
-  increment,
   selectBrands,
   selectCategories,
   selectAllProducts,
@@ -20,8 +18,6 @@ import {
   MinusIcon,
   PlusIcon,
   Squares2X2Icon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
   StarIcon,
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";

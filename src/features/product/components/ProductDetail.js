@@ -55,12 +55,10 @@ export default function ProductDetail() {
       console.log("Already added");
     } else {
       const newItem = {
-        ...product,
-        productId: product.id,
+        product: product.id,
         quantity: 1,
         user: user.id,
       };
-      delete newItem["id"];
       dispatch(addToCartAsync(newItem));
     }
   }
