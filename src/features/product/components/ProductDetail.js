@@ -51,7 +51,7 @@ export default function ProductDetail() {
 
   function handleCart(e) {
     e.preventDefault();
-    if (items.findIndex((item) => item.productId === product.id) >= 0) {
+    if (items.findIndex((item) => item.product.id === product.id) >= 0) {
       console.log("Already added");
     } else {
       const newItem = {

@@ -9,11 +9,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import {
   selectLoggedInUser,
-  updateUserAsync,
 } from "../features/auth/authSlice.js";
 import { createOrderAsync, selectCurrentOrder } from "../features/order/orderSlice.js";
 import { current } from "@reduxjs/toolkit";
-import { selectUserInfo } from "../features/user/userSlice.js";
+import { selectUserInfo, updateUserAsync } from "../features/user/userSlice.js";
 import { discountedPrice } from "../app/constants.js";
 
 export default function Checkout() {
