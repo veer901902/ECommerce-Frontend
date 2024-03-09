@@ -26,7 +26,7 @@ export function checkUser(loginInfo) {
         const error = await response.json();
         reject(error);
       } else {
-        const data = await response.json();
+        const data = await response.text();
         resolve({ data });
       }
     } catch (error) {
@@ -35,7 +35,7 @@ export function checkUser(loginInfo) {
   });
 }
 
-export function signOut(userId) {
+export function signOut() {
   return new Promise(async (resolve, reject) => {
     // TODO: on server we will remove user session info
     resolve({ data: "success" });

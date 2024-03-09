@@ -10,7 +10,6 @@ import {
 import { useParams } from "react-router-dom";
 import { fetchProductById } from "../../product/ProductApi";
 import { addToCartAsync } from "../../cart/cartSlice";
-import { selectLoggedInUser } from "../../auth/authSlice";
 import { discountedPrice } from "../../../app/constants";
 
 const colors = [
@@ -43,14 +42,13 @@ function classNames(...classes) {
 export default function AdminProductDetail() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
-  const user = useSelector(selectLoggedInUser);
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams(); //comes from react-router and gives us the parameter from the url
 
   function handleCart(e) {
     e.preventDefault();
-    const newItem = { product: product.id, quantity: 1, user: user.id };
+    const newItem = { product: product.id, quantity: 1 };
     delete newItem["id"];
     dispatch(addToCartAsync(newItem));
   }
