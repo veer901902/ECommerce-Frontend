@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
@@ -19,7 +19,10 @@ import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
 import PageNotFound from "./pages/404";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import UserOrdersPage from "./pages/UserOrdersPage";
-import { fetchLoggedInUserAsync } from "./features/user/userSlice";
+import {
+  fetchLoggedInUserAsync,
+  selectUserInfo,
+} from "./features/user/userSlice";
 import UserProfilePage from "./pages/UserProfilePage";
 import Logout from "./features/auth/components/Logout";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
@@ -149,15 +152,24 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const user = useSelector(selectLoggedInUser);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true); // Step 1: Add a loading state
 
   useEffect(() => {
-    if (user) {
-      dispatch(fetchItemsByUserIdAsync());
-      dispatch(fetchLoggedInUserAsync());
+    async function fetchData() {
+      // Step 2: Wait for the dispatch actions to complete
+      await dispatch(fetchLoggedInUserAsync());
+      await dispatch(fetchItemsByUserIdAsync());
+      setLoading(false); // Set loading to false after fetch
     }
-  }, [dispatch, user]);
+
+    fetchData();
+  }, [dispatch]);
+
+  // Step 3: Conditionally render the RouterProvider
+  if (loading) {
+    return <div>Loading...</div>; // Optionally, show a loading spinner or message
+  }
 
   return <RouterProvider router={router} />;
 }

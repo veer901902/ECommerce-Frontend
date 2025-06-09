@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createUserAsync, increment } from "../authSlice";
-import { Link } from "react-router-dom";
+import { createUserAsync, increment, selectLoggedInUser } from "../authSlice";
+import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export function Signup() {
   const dispatch = useDispatch();
+  const user = useSelector(selectLoggedInUser);
 
   const {
     register,
@@ -15,6 +16,7 @@ export function Signup() {
 
   return (
     <>
+      {user && <Navigate to="/" replace={true}></Navigate>}
       <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">

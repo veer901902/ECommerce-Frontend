@@ -2,11 +2,15 @@ export function createUser(userData) {
   return new Promise(async (resolve) => {
     const response = await fetch("http://localhost:8000/auth/signup", {
       method: "POST",
+      credentials: "include",
       body: JSON.stringify(userData),
       headers: { "content-type": "application/json" },
     });
 
     const data = await response.json();
+    const token = data.token;
+    // Store the token in localStorage
+    localStorage.setItem('authToken', token);
     resolve({ data });
   });
 }
@@ -26,7 +30,10 @@ export function checkUser(loginInfo) {
         const error = await response.json();
         reject(error);
       } else {
-        const data = await response.text();
+        const data = await response.json();
+        const token = data.token;
+        // Store the token in localStorage
+        localStorage.setItem("authToken", token);
         resolve({ data });
       }
     } catch (error) {
@@ -37,7 +44,6 @@ export function checkUser(loginInfo) {
 
 export function signOut() {
   return new Promise(async (resolve, reject) => {
-    // TODO: on server we will remove user session info
     resolve({ data: "success" });
   });
 }
